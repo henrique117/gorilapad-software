@@ -4,7 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "start": "electron .",
-    "build": "tsc && copyfiles -u 1 \"src/**/*.{html,css}\" dist/"
+    "build": "tsc && copyfiles -u 1 \"src/**/*.{html,css,js}\" dist/"
   },
   "keywords": [],
   "author": "",

@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keypad Configurator</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="checkbox.css">
+  <link rel="stylesheet" href="range.css">
 </head>
 <body>
   <div>
@@ -12,30 +14,52 @@
   </div>
   <div id="general-div">
     <div id="rt-div" class="config-divs">
-      <h2>Rapid trigger</h2>
-      <input type="checkbox" id="rapid-trigger">
+      <h2>Rapid Trigger</h2>
+      <label class="checkbox-label">
+        <input type="checkbox" id="rapid-trigger" class="config-inputs">
+        <span class="checkmark"></span>
+      </label>
+      <h2>Continuous Rapid Trigger</h2>
+      <label class="checkbox-label">
+        <input type="checkbox" id="continuous-rapid-trigger" class="config-inputs">
+        <span class="checkmark"></span>
+      </label>
     </div>
     <div id="ap-div" class="config-divs">
-      <h2>Action point</h2>
-      <input type="range" id="action-point" min="0" max="50">
+      <div class="sliders-div">
+        <div class="slider-block" style="margin-bottom: 2rem;">
+          <h2>Lower Action Point</h2>
+          <div class="value-div">
+            <div class="range-bg">
+              <div id="lap-filled-bg"></div>
+              <input type="range" id="lower-action-point" min="0" max="400" value="200" class="config-inputs sliders" oninput="handleLowerSlider()">
+            </div>
+            <h4><span id="lap-value"></span></h4>
+          </div>
+        </div>
+        <div class="slider-block">
+          <h2>Upper Action Point</h2>
+          <div class="value-div">
+            <div class="range-bg">
+              <div id="uap-filled-bg"></div>
+              <input type="range" id="upper-action-point" min="0" max="400" value="200" class="config-inputs sliders" oninput="handleUpperSlider()">
+            </div>
+            <h4><span id="uap-value"></span></h4>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div id="keys-div">
     <div id="keys-bg-div">
-      <span class="keys">
-        <input type="text" value="" id="key1" class="key-input">
-      </span>
-      <span class="keys">
-        <input type="text" value="" id="key2" class="key-input">
-      </span>
-      <span class="keys">
-        <input type="text" value="" id="key3" class="key-input">
-      </span>
+      <span class="keys"></span>
+      <span class="keys"></span>
+      <span class="keys"></span>
     </div>
   </div>
   <div id="button-div">
     <button id="save-button">Save Config</button>
   </div>
-  <script src="../functions/renderer.js"></script>
+  <script src="./sliders.js"></script>
 </body>
 </html>

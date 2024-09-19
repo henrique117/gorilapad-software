@@ -7,8 +7,8 @@ export default function createWindow() {
 
     function window() {
         mainWindow = new BrowserWindow({
-            width: 800,
-            height: 600,
+            width: 1100,
+            height: 800,
             webPreferences: {
                 preload: path.join(__dirname, 'preload.js'),
                 nodeIntegration: true,
