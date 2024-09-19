@@ -3,20 +3,19 @@ import * as path from 'path'
 
 let mainWindow: BrowserWindow | null
 
-export default function createWindow() {
+export default function createWindow(windowWidth: number, windowHeight: number, page: string) {
 
     function window() {
         mainWindow = new BrowserWindow({
-            width: 1100,
-            height: 800,
+            width: windowWidth,
+            height: windowHeight,
             webPreferences: {
-                preload: path.join(__dirname, 'preload.js'),
                 nodeIntegration: true,
                 contextIsolation: false
             }
         });
 
-        const htmlPath = path.join(__dirname, '../page/index.html')
+        const htmlPath = path.join(__dirname, `../public/pages/${page}.html`)
         console.log(htmlPath)
         mainWindow.loadFile(htmlPath)
 
