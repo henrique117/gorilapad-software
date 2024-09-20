@@ -10,8 +10,9 @@ export default function createWindow(windowWidth: number, windowHeight: number, 
             width: windowWidth,
             height: windowHeight,
             webPreferences: {
+                preload: path.join(__dirname, `../preload.js`),
                 nodeIntegration: true,
-                contextIsolation: false
+                contextIsolation: true
             }
         });
 

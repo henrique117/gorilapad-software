@@ -1,0 +1,1 @@
+export {default as DataInterface} from './data.interface'
