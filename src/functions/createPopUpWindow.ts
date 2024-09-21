@@ -1,4 +1,4 @@
-import { BrowserWindow } from 'electron'
+import { BrowserWindow, ipcMain } from 'electron'
 import * as path from 'path'
 import { mainWindow } from '../index'
 
@@ -13,13 +13,17 @@ export default function createPopUpWindow(page: string) {
 
     popUpWindow = new BrowserWindow({
         width: 400,
-        height: 300,
+        height: 220,
         parent: mainWindow,
         modal: true,
         show: false,
+        resizable: false,
+        frame: false,
+        transparent: true,
         webPreferences: {
-            nodeIntegration: true,
-            contextIsolation: false
+            preload: path.join(__dirname, '../preload.js'),
+            nodeIntegration: false,
+            contextIsolation: true
         }
     })
 
@@ -34,3 +38,7 @@ export default function createPopUpWindow(page: string) {
         popUpWindow = null
     })
 }
+
+ipcMain.on('close-pop-up', (_) => {
+    popUpWindow?.close()
+})

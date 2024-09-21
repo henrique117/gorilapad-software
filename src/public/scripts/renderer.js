@@ -36,6 +36,7 @@ function handleSaveButton() {
         LowerActionPoint: parseInt(lowerActionPointSlider.value),
         UpperActionPoint: parseInt(upperActionPointSlider.value)
     })
+    window.api.openPopUpWindow('savedData.popUp')
 }
 
 function handleLowerSlider() {

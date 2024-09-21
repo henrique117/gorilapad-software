@@ -32,6 +32,10 @@ app.whenReady().then(() => {
         }
     })
 
+    ipcMain.on('open-pop-up', (_, page) => {
+        Functions.createPopUpWindow(page)
+    })
+
     app.on('window-all-closed', () => {
         if(process.platform !== 'darwin') app.quit()
     })
