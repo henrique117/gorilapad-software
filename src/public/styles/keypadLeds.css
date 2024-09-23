@@ -1,0 +1,68 @@
+.led {
+    width: 70%;
+    height: 70%;
+    background: radial-gradient(circle, rgba(230, 44, 212, 0.6) 30%, rgba(230, 44, 212, 0.2) 70%);
+    position: absolute;
+}
+
+.led1 {
+    animation: moveLed1 8s linear infinite;
+}
+
+.led2 {
+    animation: moveLed2 8s linear infinite;
+}
+
+@keyframes moveLed1 {
+    0% {
+        top: -30%;
+        left: -30%;
+    }
+
+    25% {
+        top: -30%;
+        left: 70%;
+    }
+
+    50% {
+        top: 70%;
+        left: 70%;
+    }
+
+    75% {
+        top: 70%;
+        left: -30%;
+    }
+
+    100% {
+        top: -30%;
+        left: -30%;
+    }
+}
+
+@keyframes moveLed2 {
+    0% {
+        top: 70%;
+        left: 70%;
+    }
+
+    25% {
+        top: 70%;
+        left: -30%;
+    }
+
+    50% {
+        top: -30%;
+        left: -30%;
+    }
+
+    75% {
+        top: -30%;
+        left: 70%;
+    }
+
+    100% {
+        top: 70%;
+        left: 70%;
+    }
+}

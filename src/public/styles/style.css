@@ -3,7 +3,6 @@
 * {
     border: none;
     margin: 0;
-    padding: 0;
 }
 
 h1 {
@@ -27,6 +26,7 @@ h2 {
 
 body {
     background-color: #1f2021;
+    position: relative;
 }
 
 #general-div {
@@ -51,18 +51,29 @@ body {
     margin-bottom: 1rem;
 }
 
-#keys-bg-div {
+#keys-orange-bg-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 27%;
+    background-color: orange;
+    border-radius: 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+#keys-grey-bg-div {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border-style: solid;
-    border-color: orange;
-    border-width: 2px;
-    border-radius: 25px;
-    height: 60%;
-    width: 27%;
-    background-color: #839091;
+    height: 95%;
+    width: 97.7%;
+    background-color: #1f2021;
+    border-radius: 22px;
+    position: absolute;
+    z-index: 1;
 }
 
 #keys-div {
@@ -73,6 +84,7 @@ body {
     width: 100%;
     height: 30vh;
     margin-bottom: 2rem;
+    background-color: #1f2021;
 }
 
 .keys {
@@ -82,45 +94,15 @@ body {
     width: 3rem;
     height: 3rem;
     border-style: solid;
-    border-color: grey;
-    border-width: 2px;
+    border-color: orange;
+    border-width: 2.7px;
     border-radius: 20%;
     margin-inline: 0.7rem;
-    background-color: lightgray;
+    background-color: #1f2021;
 }
 
 .keys:hover {
-    background-color: rgba(189, 189, 189, 0.75);
-    transition: 0.3s;
     cursor: pointer;
-}
-
-#button-div {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-#save-button {
-    border: none;
-    background-color: orange;
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    color: black;
-    padding: 2rem;
-    border-radius: 25px;
-    transition: 0.3s;
-}
-
-#save-button:hover {
-    background-color: rgba(224, 145, 0, 0.9);
-    cursor: pointer;
-    transition: 0.3s;
 }
 
 span {
@@ -128,10 +110,5 @@ span {
     font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
-}
-
-.keys:hover ~ .key-input {
-    background-color: rgba(189, 189, 189, 0.75);
-    transition: 0.3s;
-    cursor: pointer;
+    color: white;
 }

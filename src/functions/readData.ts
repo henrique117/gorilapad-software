@@ -11,7 +11,12 @@ export default async function readData(): Promise<Interfaces.DataInterface> {
         RapidTrigger: false,
         ContinuousRapidTrigger: false,
         LowerActionPoint: 200,
-        UpperActionPoint: 200
+        UpperActionPoint: 200,
+        Keys: {
+            Key1: 'z',
+            Key2: 'x',
+            Key3: 'c',
+        }
     }
 
     try {
