@@ -10,5 +10,6 @@ contextBridge.exposeInMainWorld('api', {
         callback(data)
     }),
     openPopUpWindow: (page: string) => ipcRenderer.send('open-pop-up', page),
-    closePopUpWindow: () => ipcRenderer.send('close-pop-up')
+    closePopUpWindow: () => ipcRenderer.send('close-pop-up'),
+    selectKeySlot: (keyId: number) => ipcRenderer.send('select-key-slot', keyId)
 })

@@ -16,13 +16,13 @@ var keys = {
 }
 
 keys.key1.addEventListener('click', () => {
-    handleKeys()
+    handleKeys(1)
 })
 keys.key2.addEventListener('click', () => {
-    handleKeys()
+    handleKeys(2)
 })
 keys.key3.addEventListener('click', () => {
-    handleKeys()
+    handleKeys(3)
 })
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -78,6 +78,6 @@ function handleUpperSlider() {
     upperProgressBar.style.width = `${upperActionPointSlider.value / 4}%`
 }
 
-function handleKeys() {
-    window.api.openPopUpWindow('keyConfig.popUp')
+function handleKeys(keyId) {
+    window.api.selectKeySlot(keyId)
 }

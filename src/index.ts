@@ -36,6 +36,10 @@ app.whenReady().then(() => {
         Functions.createPopUpWindow(page)
     })
 
+    ipcMain.on('select-key-slot', (_, keyId) => {
+        Functions.selectKeySlot(keyId)
+    })
+
     app.on('window-all-closed', () => {
         if(process.platform !== 'darwin') app.quit()
     })
